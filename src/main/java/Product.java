@@ -33,10 +33,10 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "cost=" + cost +
-                ", shelfLife=" + getFromattedShelfLife() +
-                ", vendorCode='" + vendorCode + '\'' +
+        return "Product: {" +
+                "cost: " + cost +
+                ", shelfLife: " + getFromattedShelfLife() +
+                ", vendorCode: '" + vendorCode + '\'' +
                 '}';
     }
 }

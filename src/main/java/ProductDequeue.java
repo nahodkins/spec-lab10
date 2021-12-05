@@ -1,25 +1,17 @@
 import java.time.LocalDate;
-import java.util.ArrayDeque;
-import java.util.Deque;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ProductDequeue {
 
-    private Deque<Product> products;
+    private Queue<Product> products;
 
     public ProductDequeue() {
-        products = new ArrayDeque<>();
+        products = new PriorityQueue<>(Comparator.comparing(Product::getShelfLife));
     }
 
     public void add(Product product) {
-        LocalDate shelfLife = product.getShelfLife();
-        if (products.isEmpty()) {
-            products.add(product);
-        } else if (products.getFirst().getShelfLife().isAfter(shelfLife)) {
-            products.addFirst(product);
-        } else {
-            products.addLast(product);
-        }
+        products.add(product);
     }
 
     public void add(Product ...products) {
