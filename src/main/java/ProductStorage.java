@@ -20,6 +20,10 @@ public class ProductStorage {
         return articleProductMap.getOrDefault(vendorCode, null);
     }
 
+    public Map<String, Product> getArticleProductMap() {
+        return articleProductMap;
+    }
+
     @Override
     public String toString() {
         return articleProductMap.entrySet().stream()

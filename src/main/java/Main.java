@@ -6,15 +6,19 @@ public class Main {
         Product banana = new Product(25.0, LocalDate.of(2022, 2, 1), "A123");
         Product apple = new Product(25.0, LocalDate.of(2022, 1, 1), "A124");
         Product tomato = new Product(25.0, LocalDate.of(2022, 3, 1), "A125");
-        Product chocolate = new Product(25.0, LocalDate.of(2021, 12, 20), "A126");
+        Product chocolate = new Product(25.0, LocalDate.of(2021, 12, 20), "A123");
 
-        ProductStorage storage = new ProductStorage();
-        storage.add(banana);
-        storage.add(apple);
-        storage.add(tomato);
-        storage.add(chocolate);
+        ProductStorage first = new ProductStorage();
+        first.add(banana);
+        first.add(apple);
+
+        ProductStorage second = new ProductStorage();
+        second.add(tomato);
+        second.add(chocolate);
+
+        CommonProductStorage storage = new CommonProductStorage();
+        storage.addNewStorage(first);
+        storage.addNewStorage(second);
         System.out.println(storage);
-        System.out.println();
-        System.out.println(storage.get("A126"));
     }
 }
